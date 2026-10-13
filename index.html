@@ -3,510 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manantial de Pueblo — Agua pura, vida saludable</title>
-<meta name="description" content="Manantial de Pueblo: agua potable tratada envasada en Guaca, Santander. Registro sanitario INVIMA RSA-3628-2026. Pedidos a domicilio por WhatsApp.">
+<title>Manantial de Pueblo — Agua pura y trucha fresca</title>
+<meta name="description" content="Manantial de Pueblo: agua potable tratada envasada en Guaca, Santander. Registro sanitario INVIMA RSA-3628-2026. Trucha fresca de la región. Pedidos a domicilio por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#0B2545;
-    --deep:#114B8A;
-    --spring:#1E8FD9;
-    --aqua:#5FD4D0;
-    --leaf:#2FA84F;
-    --mist:#F2F8FB;
-    --stone:#E7EEF2;
-    --white:#FFFFFF;
-    --max:1180px;
-    --radius:18px;
-    --shadow:0 18px 40px -18px rgba(11,37,69,.25);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    font-family:'Manrope',sans-serif;
-    color:var(--ink);
-    background:var(--mist);
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3{
-    font-family:'Sora',sans-serif;
-    margin:0;
-    letter-spacing:-0.01em;
-  }
-  .mono{
-    font-family:'Space Mono',monospace;
-  }
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  :focus-visible{outline:3px solid var(--spring);outline-offset:3px;}
+:root{--ink:#0B2545;--ink-2:#0e3a66;--ink-3:#114B8A;--deep:#114B8A;--spring:#1E8FD9;--aqua:#5FD4D0;--leaf:#2FA84F;--white:#FFFFFF;--text:#dbe7f2;--text-dim:#8fa8c4;--max:1180px;--radius:18px;--shadow:0 18px 40px -18px rgba(0,0,0,.5);}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Manrope',sans-serif;color:var(--text);background:var(--ink);-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Sora',sans-serif;margin:0;letter-spacing:-0.01em;color:var(--white);}
+.mono{font-family:'Space Mono',monospace;}a{color:inherit;text-decoration:none;}img{max-width:100%;display:block;}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+:focus-visible{outline:3px solid var(--spring);outline-offset:3px;}
+header{position:sticky;top:0;z-index:50;background:rgba(11,37,69,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;max-width:var(--max);margin:0 auto;}
+.brand{display:flex;align-items:center;gap:10px;}
+.brand-logo{width:42px;height:42px;border-radius:50%;object-fit:cover;background:#fff;}
+.brand-name{font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;line-height:1.05;color:var(--white);letter-spacing:-0.01em;}
+.brand-name span{display:block;font-size:.6rem;font-weight:600;color:var(--aqua);letter-spacing:.12em;font-family:'Space Mono',monospace;}
+nav.links{display:flex;gap:30px;font-weight:600;font-size:.92rem;}
+nav.links a{position:relative;padding:6px 0;color:var(--text);}
+nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--aqua);transition:width .25s ease;}
+nav.links a:hover::after{width:100%;}
+.nav-actions{display:flex;align-items:center;gap:14px;}
+.wa-pill{display:flex;align-items:center;gap:8px;background:var(--spring);color:var(--white);padding:9px 16px;border-radius:999px;font-weight:700;font-size:.85rem;box-shadow:var(--shadow);transition:transform .2s ease,background .2s ease;}
+.wa-pill:hover{transform:translateY(-2px);background:var(--aqua);color:var(--ink);}
+.wa-pill svg{width:16px;height:16px;flex:none;}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+.burger span{display:block;width:22px;height:2px;background:var(--white);margin:5px 0;border-radius:2px;}
+.banner{position:relative;width:100%;height:480px;overflow:hidden;background:var(--ink-2);}
+.banner-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;background-size:cover;background-position:center;}
+.banner-slide.active{opacity:1;}
 
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
-  }
-
-  /* ---------- Header ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(242,248,251,.88);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(11,37,69,.08);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 28px;
-    max-width:var(--max);margin:0 auto;
-  }
-  .brand{display:flex;align-items:center;gap:10px;}
-  .brand-name{
-    font-family:'Sora',sans-serif;font-weight:800;font-size:1.05rem;
-    line-height:1.05;color:var(--deep);letter-spacing:-0.01em;
-  }
-  .brand-name span{display:block;font-size:.6rem;font-weight:600;color:var(--leaf);letter-spacing:.12em;font-family:'Space Mono',monospace;}
-  nav.links{display:flex;gap:30px;font-weight:600;font-size:.92rem;}
-  nav.links a{position:relative;padding:6px 0;color:var(--ink);}
-  nav.links a::after{
-    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--spring);
-    transition:width .25s ease;
-  }
-  nav.links a:hover::after{width:100%;}
-  .nav-actions{display:flex;align-items:center;gap:14px;}
-  .wa-pill{
-    display:flex;align-items:center;gap:8px;
-    background:var(--deep);color:var(--white);
-    padding:9px 16px;border-radius:999px;
-    font-weight:700;font-size:.85rem;
-    box-shadow:var(--shadow);
-    transition:transform .2s ease, background .2s ease;
-  }
-  .wa-pill:hover{transform:translateY(-2px);background:var(--spring);}
-  .wa-pill svg{width:16px;height:16px;flex:none;}
-  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
-  .burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;}
-
-  /* ---------- Hero ---------- */
-  .hero{
-    position:relative;overflow:hidden;
-    padding:64px 0 0;
-    background:linear-gradient(180deg,#eaf6fb 0%, var(--mist) 70%);
-  }
-  .hero-grid{
-    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
-  }
-  .eyebrow-pill{
-    display:inline-flex;align-items:center;gap:8px;
-    background:var(--white);border:1px solid var(--stone);
-    padding:7px 14px;border-radius:999px;
-    font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.06em;
-    color:var(--deep);box-shadow:0 6px 16px -10px rgba(11,37,69,.3);
-    margin-bottom:22px;
-  }
-  .eyebrow-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--leaf);animation:pulse 2.4s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-  .hero h1{
-    font-size:clamp(2.1rem,4.4vw,3.4rem);
-    font-weight:800;line-height:1.06;color:var(--ink);
-    max-width:560px;
-  }
-  .hero h1 em{
-    font-style:normal;color:var(--spring);
-    background:linear-gradient(180deg,transparent 62%, rgba(95,212,208,.45) 62%);
-  }
-  .hero p.lead{
-    margin-top:20px;font-size:1.08rem;line-height:1.6;color:#37506e;max-width:480px;
-  }
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:14px 24px;border-radius:14px;font-weight:700;font-size:.96rem;
-    cursor:pointer;border:none;transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .btn svg{width:18px;height:18px;flex:none;}
-  .btn-primary{background:var(--deep);color:var(--white);box-shadow:0 16px 30px -14px rgba(17,75,138,.55);}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 34px -12px rgba(17,75,138,.6);}
-  .btn-ghost{background:var(--white);color:var(--deep);border:1.5px solid var(--stone);}
-  .btn-ghost:hover{border-color:var(--spring);color:var(--spring);transform:translateY(-3px);}
-
-  .hero-visual{position:relative;}
-  .ripple-card{
-    position:relative;border-radius:24px;overflow:hidden;
-    background:linear-gradient(160deg,#0e3a66,#1e8fd9 60%, #5fd4d0 130%);
-    box-shadow:var(--shadow);
-    padding:18px 18px 0;
-  }
-  .ripple-card img{border-radius:14px 14px 0 0;width:100%;height:420px;object-fit:cover;}
-  .ripple-badge{
-    position:absolute;top:32px;left:32px;
-    background:rgba(255,255,255,.95);color:var(--deep);
-    padding:8px 14px;border-radius:999px;
-    font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.06em;
-    box-shadow:0 8px 18px -8px rgba(11,37,69,.35);
-    display:flex;align-items:center;gap:6px;z-index:2;
-  }
-  .ripple-badge svg{width:14px;height:14px;flex:none;stroke:var(--leaf);}
-
-  .wave-divider{display:block;width:100%;height:auto;margin-top:46px;}
-
-  /* ---------- Section shared ---------- */
-  section{padding:78px 0;}
-  .section-head{max-width:620px;margin:0 auto 46px;text-align:center;}
-  .section-head .tag{
-    font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.14em;
-    color:var(--leaf);text-transform:uppercase;font-weight:700;
-  }
-  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:10px;color:var(--ink);}
-  .section-head p{margin-top:14px;color:#46607f;font-size:1.02rem;line-height:1.6;}
-
-  /* ---------- Value props ---------- */
-  .values{background:var(--white);}
-  .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
-  .value-card{
-    background:var(--mist);border-radius:18px;padding:28px 22px;
-    border:1px solid var(--stone);transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
-  .icon-circle{
-    width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    background:var(--white);box-shadow:0 8px 18px -8px rgba(11,37,69,.25);margin-bottom:16px;
-  }
-  .icon-circle svg{width:22px;height:22px;}
-  .value-card h3{font-size:1.05rem;font-weight:700;}
-  .value-card p{margin:8px 0 0;font-size:.92rem;color:#52688a;line-height:1.5;}
-
-  /* ---------- Products ---------- */
-  .products{background:var(--mist);}
-  .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .product-card{
-    background:var(--white);border-radius:var(--radius);overflow:hidden;
-    border:1px solid var(--stone);display:flex;flex-direction:column;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
-  .product-media{height:230px;overflow:hidden;background:linear-gradient(160deg,#dff1f7,#cfe9f2);position:relative;}
-  .product-media img{width:100%;height:100%;object-fit:cover;}
-  .product-cap{
-    position:absolute;top:14px;left:14px;background:rgba(11,37,69,.85);color:var(--white);
-    font-family:'Space Mono',monospace;font-size:.72rem;padding:5px 10px;border-radius:999px;
-  }
-  .product-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
-  .product-body h3{font-size:1.08rem;font-weight:700;}
-  .product-body p{margin:0;font-size:.9rem;color:#52688a;line-height:1.5;flex:1;}
-  .product-order{
-    margin-top:6px;display:inline-flex;align-items:center;gap:8px;
-    font-weight:700;font-size:.88rem;color:var(--deep);
-    padding:10px 0;border-top:1px solid var(--stone);justify-content:space-between;
-  }
-  .product-order svg{width:15px;height:15px;transition:transform .2s ease;}
-  .product-card:hover .product-order svg{transform:translateX(4px);}
-
-  /* ---------- Process ---------- */
-  .process{background:var(--white);}
-  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;counter-reset:step;}
-  .process-card{position:relative;padding:30px 26px 26px;border-radius:18px;background:var(--mist);border:1px solid var(--stone);}
-  .process-num{
-    font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;color:var(--aqua);
-    line-height:1;margin-bottom:10px;
-  }
-  .process-card h3{font-size:1.05rem;font-weight:700;}
-  .process-card p{margin:8px 0 0;font-size:.92rem;color:#52688a;line-height:1.5;}
-  .process-grid .process-card:not(:last-child)::after{
-    content:"";position:absolute;right:-23px;top:50%;width:22px;height:2px;
-    background:repeating-linear-gradient(to right, var(--stone) 0 6px, transparent 6px 10px);
-  }
-  @media (max-width:880px){.process-grid .process-card::after{display:none;}}
-
-  /* ---------- Trust strip ---------- */
-  .trust{background:linear-gradient(160deg,var(--deep),#0d3f73);color:var(--white);}
-  .trust .section-head h2, .trust .section-head .tag{color:var(--white);}
-  .trust .section-head p{color:rgba(255,255,255,.78);}
-  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
-  .trust-card{text-align:center;padding:10px;}
-  .trust-card .icon-circle{margin:0 auto 14px;background:rgba(255,255,255,.12);box-shadow:none;}
-  .trust-card .icon-circle svg{stroke:var(--white);}
-  .trust-card h4{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin:0;}
-  .trust-card p{margin:6px 0 0;font-size:.82rem;color:rgba(255,255,255,.72);}
-
-  /* ---------- Certifications Section ---------- */
-  .certifications{background:var(--white);}
-  .cert-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:34px;
-    align-items:start;
-  }
-  .cert-card{
-    background:var(--mist);
-    border-radius:var(--radius);
-    padding:30px 28px;
-    border:2px solid var(--stone);
-    transition:border-color .3s ease, box-shadow .3s ease;
-  }
-  .cert-card:hover{
-    border-color:var(--spring);
-    box-shadow:var(--shadow);
-  }
-  .cert-card .icon-circle{
-    margin-bottom:14px;
-    background:var(--white);
-  }
-  .cert-card h3{
-    font-size:1.1rem;
-    font-weight:700;
-    margin-bottom:8px;
-    color:var(--deep);
-  }
-  .cert-card p{
-    font-size:.92rem;
-    line-height:1.6;
-    color:#52688a;
-    margin:0 0 12px;
-  }
-  .cert-badge{
-    display:inline-block;
-    background:var(--leaf);
-    color:var(--white);
-    font-family:'Space Mono',monospace;
-    font-size:.7rem;
-    font-weight:700;
-    padding:4px 14px;
-    border-radius:999px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-  }
-  .cert-pdf-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    margin-top:12px;
-    font-weight:600;
-    color:var(--deep);
-    padding:8px 16px;
-    background:var(--white);
-    border-radius:999px;
-    border:1px solid var(--stone);
-    font-size:.85rem;
-    transition:all .2s ease;
-  }
-  .cert-pdf-link:hover{
-    border-color:var(--spring);
-    background:var(--spring);
-    color:var(--white);
-  }
-  .cert-pdf-link svg{
-    width:16px;
-    height:16px;
-  }
-  .cert-preview{
-    margin-top:14px;
-    border-radius:10px;
-    overflow:hidden;
-    border:1px solid var(--stone);
-    background:var(--white);
-    padding:14px;
-    text-align:center;
-  }
-  .cert-preview img{
-    max-height:200px;
-    margin:0 auto;
-    border-radius:6px;
-    object-fit:contain;
-  }
-  .cert-preview .mono{
-    display:block;
-    font-size:.72rem;
-    color:#7990ad;
-    margin-top:8px;
-  }
-
-  /* ---------- Contact ---------- */
-  .contact{background:var(--mist);}
-  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start;}
-  .contact-card{
-    background:linear-gradient(160deg,#0e3a66,#1e8fd9);color:var(--white);
-    border-radius:22px;padding:36px 30px;box-shadow:var(--shadow);
-  }
-  .contact-card h3{font-size:1.3rem;font-weight:700;margin-bottom:10px;}
-  .contact-card p{color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.6;margin:0 0 22px;}
-  .contact-number{
-    font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;
-    display:flex;align-items:center;gap:10px;margin-bottom:18px;
-  }
-  .contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:.9rem;}
-  .contact-list li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.9);}
-  .contact-list svg{width:16px;height:16px;flex:none;}
-
-  .form-card{
-    background:var(--white);border-radius:22px;padding:32px;border:1px solid var(--stone);
-    box-shadow:var(--shadow);
-  }
-  .form-card h3{font-size:1.15rem;margin-bottom:6px;}
-  .form-card>p{margin:0 0 22px;color:#52688a;font-size:.9rem;}
-  .field{margin-bottom:16px;display:flex;flex-direction:column;gap:6px;}
-  .field label{font-size:.82rem;font-weight:700;color:var(--ink);}
-  .field input, .field select, .field textarea{
-    border:1.5px solid var(--stone);border-radius:10px;padding:11px 13px;
-    font-family:'Manrope',sans-serif;font-size:.92rem;color:var(--ink);background:var(--mist);
-  }
-  .field input:focus, .field select:focus, .field textarea:focus{
-    outline:none;border-color:var(--spring);background:var(--white);
-  }
-  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .form-note{font-size:.78rem;color:#7990ad;margin-top:10px;}
-  .form-status{
-    margin-top:14px;font-size:.88rem;font-weight:600;color:var(--leaf);display:none;
-  }
-
-  /* ---------- Footer ---------- */
-  footer{background:var(--ink);color:rgba(255,255,255,.8);padding:50px 0 26px;}
-  .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;}
-  .footer-brand{display:flex;align-items:center;gap:10px;}
-  .footer-brand .brand-name{color:var(--white);}
-  .footer-tagline{font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--white);margin-top:14px;max-width:280px;}
-  .footer-legal{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:14px;max-width:280px;line-height:1.6;}
-  .footer-cols{display:flex;gap:60px;flex-wrap:wrap;}
-  .footer-col h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;font-family:'Space Mono',monospace;}
-  .footer-col a, .footer-col p{display:block;font-size:.92rem;color:rgba(255,255,255,.82);margin-bottom:10px;}
-  .footer-bottom{
-    max-width:var(--max);margin:40px auto 0;padding:20px 28px 0;border-top:1px solid rgba(255,255,255,.12);
-    display:flex;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:10px;
-  }
-  .footer-credit a{
-    color:rgba(255,255,255,.7);
-    transition:color .2s ease;
-    text-decoration:none;
-  }
-  .footer-credit a:hover{
-    color:#5FD4D0;
-  }
-
-  /* ---------- Responsive ---------- */
-  @media (max-width:980px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-visual{order:-1;max-width:480px;margin:0 auto;}
-    .value-grid{grid-template-columns:repeat(2,1fr);}
-    .product-grid{grid-template-columns:repeat(2,1fr);}
-    .process-grid{grid-template-columns:1fr;}
-    .trust-grid{grid-template-columns:repeat(2,1fr);}
-    .contact-grid{grid-template-columns:1fr;}
-    .cert-grid{grid-template-columns:1fr;}
-  }
-  @media (max-width:680px){
-    nav.links{display:none;}
-    .burger{display:block;}
-    .value-grid{grid-template-columns:1fr;}
-    .product-grid{grid-template-columns:1fr;}
-    .row-2{grid-template-columns:1fr;}
-    .footer-grid{flex-direction:column;}
-    .footer-cols{gap:36px;}
-  }
-  nav.links.open{
-    display:flex;position:absolute;top:100%;left:0;right:0;background:var(--white);
-    flex-direction:column;padding:18px 28px;gap:16px;box-shadow:0 14px 24px -12px rgba(11,37,69,.2);
-    border-bottom:1px solid var(--stone);
-  }
+.banner-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:3;}
+.banner-dots button{width:10px;height:10px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.4);transition:background .2s ease,transform .2s ease;}
+.banner-dots button.active{background:var(--aqua);transform:scale(1.3);}
+section{padding:78px 0;}
+.section-head{max-width:620px;margin:0 auto 46px;text-align:center;}
+.section-head .tag{font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.14em;color:var(--aqua);text-transform:uppercase;font-weight:700;}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:10px;color:var(--white);}
+.section-head p{margin-top:14px;color:var(--text-dim);font-size:1.02rem;line-height:1.6;}
+.values{background:var(--ink-2);}
+.value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.value-card{background:var(--ink-3);border-radius:18px;padding:28px 22px;border:1px solid rgba(255,255,255,.08);transition:transform .25s ease,box-shadow .25s ease;}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+.icon-circle{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);margin-bottom:16px;}
+.icon-circle svg{width:22px;height:22px;}
+.value-card h3{font-size:1.05rem;font-weight:700;color:var(--white);}
+.value-card p{margin:8px 0 0;font-size:.92rem;color:var(--text-dim);line-height:1.5;}
+.products{background:var(--ink);}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.product-card{background:var(--ink-3);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease;}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+.product-media{height:230px;overflow:hidden;background:var(--ink-2);position:relative;}
+.product-media img{width:100%;height:100%;object-fit:cover;}
+.product-cap{position:absolute;top:14px;left:14px;background:rgba(11,37,69,.9);color:var(--white);font-family:'Space Mono',monospace;font-size:.72rem;padding:5px 10px;border-radius:999px;border:1px solid rgba(95,212,208,.4);}
+.product-body{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.product-body h3{font-size:1.08rem;font-weight:700;color:var(--white);}
+.product-body p{margin:0;font-size:.9rem;color:var(--text-dim);line-height:1.5;flex:1;}
+.product-order{margin-top:6px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.88rem;color:var(--aqua);padding:10px 0;border-top:1px solid rgba(255,255,255,.08);justify-content:space-between;}
+.product-order svg{width:15px;height:15px;transition:transform .2s ease;}
+.product-card:hover .product-order svg{transform:translateX(4px);}
+.trucha{background:var(--ink-2);}
+.trucha-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.trucha-text .tag{font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.14em;color:var(--leaf);text-transform:uppercase;font-weight:700;}
+.trucha-text h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:10px;color:var(--white);}
+.trucha-text p{margin-top:18px;font-size:1.02rem;color:var(--text-dim);line-height:1.7;}
+.trucha-text .btn{margin-top:26px;}
+.trucha-media{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.trucha-media img{border-radius:14px;width:100%;height:200px;object-fit:cover;border:1px solid rgba(255,255,255,.08);}
+.trucha-media img:first-child{grid-column:1/-1;height:260px;}
+.process{background:var(--ink);}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.process-card{position:relative;padding:30px 26px 26px;border-radius:18px;background:var(--ink-3);border:1px solid rgba(255,255,255,.08);}
+.process-num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.4rem;color:var(--aqua);line-height:1;margin-bottom:10px;}
+.process-card h3{font-size:1.05rem;font-weight:700;color:var(--white);}
+.process-card p{margin:8px 0 0;font-size:.92rem;color:var(--text-dim);line-height:1.5;}
+.trust{background:linear-gradient(160deg,var(--ink-3),var(--ink));color:var(--white);}
+.trust .section-head h2,.trust .section-head .tag{color:var(--white);}
+.trust .section-head p{color:rgba(255,255,255,.78);}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.trust-card{text-align:center;padding:10px;}
+.trust-card .icon-circle{margin:0 auto 14px;background:rgba(255,255,255,.12);}
+.trust-card h4{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin:0;color:var(--white);}
+.trust-card p{margin:6px 0 0;font-size:.82rem;color:rgba(255,255,255,.7);}
+.certifications{background:var(--ink-2);}
+.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;}
+.cert-card{background:var(--ink-3);border-radius:var(--radius);padding:30px 28px;border:2px solid rgba(255,255,255,.08);transition:border-color .3s ease,box-shadow .3s ease;}
+.cert-card:hover{border-color:var(--aqua);box-shadow:var(--shadow);}
+.cert-card .icon-circle{margin-bottom:14px;background:rgba(255,255,255,.1);}
+.cert-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;color:var(--white);}
+.cert-card p{font-size:.92rem;line-height:1.6;color:var(--text-dim);margin:0 0 12px;}
+.cert-badge{display:inline-block;background:var(--leaf);color:var(--white);font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase;}
+.cert-pdf-link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;color:var(--aqua);padding:8px 16px;background:rgba(95,212,208,.1);border-radius:999px;border:1px solid rgba(95,212,208,.3);font-size:.85rem;transition:all .2s ease;}
+.cert-pdf-link:hover{background:var(--aqua);color:var(--ink);}
+.cert-pdf-link svg{width:16px;height:16px;}
+.cert-preview{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:var(--ink);padding:14px;text-align:center;}
+.cert-preview img{max-height:200px;margin:0 auto;border-radius:6px;object-fit:contain;}
+.cert-preview .mono{display:block;font-size:.72rem;color:var(--text-dim);margin-top:8px;}
+.precios{background:var(--ink);}
+.precios-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;}
+.precios-card{background:var(--ink-3);border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:transform .25s ease,box-shadow .25s ease;}
+.precios-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.precios-card img{width:100%;display:block;}
+.precios-card .cap{padding:16px 20px;font-size:.88rem;color:var(--text-dim);border-top:1px solid rgba(255,255,255,.08);}
+.contact{background:var(--ink-2);}
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start;}
+.contact-card{background:linear-gradient(160deg,var(--ink-3),var(--spring));color:var(--white);border-radius:22px;padding:36px 30px;box-shadow:var(--shadow);}
+.contact-card h3{font-size:1.3rem;font-weight:700;margin-bottom:10px;color:var(--white);}
+.contact-card p{color:rgba(255,255,255,.9);font-size:.95rem;line-height:1.6;margin:0 0 22px;}
+.contact-number{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.contact-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:.9rem;}
+.contact-list li{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.92);}
+.contact-list svg{width:16px;height:16px;flex:none;}
+.form-card{background:var(--ink-3);border-radius:22px;padding:32px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);}
+.form-card h3{font-size:1.15rem;margin-bottom:6px;color:var(--white);}
+.form-card>p{margin:0 0 22px;color:var(--text-dim);font-size:.9rem;}
+.field{margin-bottom:16px;display:flex;flex-direction:column;gap:6px;}
+.field label{font-size:.82rem;font-weight:700;color:var(--white);}
+.field input,.field select,.field textarea{border:1.5px solid rgba(255,255,255,.12);border-radius:10px;padding:11px 13px;font-family:'Manrope',sans-serif;font-size:.92rem;color:var(--white);background:var(--ink-2);}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--aqua);background:var(--ink);}
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.form-note{font-size:.78rem;color:var(--text-dim);margin-top:10px;}
+.form-status{margin-top:14px;font-size:.88rem;font-weight:600;color:var(--leaf);display:none;}
+footer{background:#081c33;color:rgba(255,255,255,.75);padding:50px 0 26px;}
+.footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;}
+.footer-brand{display:flex;align-items:center;gap:10px;}
+.footer-brand .brand-name{color:var(--white);}
+.footer-tagline{font-family:'Sora',sans-serif;font-size:1.1rem;color:var(--white);margin-top:14px;max-width:280px;}
+.footer-legal{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:14px;max-width:280px;line-height:1.6;}
+.footer-cols{display:flex;gap:60px;flex-wrap:wrap;}
+.footer-col h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;font-family:'Space Mono',monospace;}
+.footer-col a,.footer-col p{display:block;font-size:.92rem;color:rgba(255,255,255,.75);margin-bottom:10px;}
+.footer-bottom{max-width:var(--max);margin:40px auto 0;padding:20px 28px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.45);flex-wrap:wrap;gap:10px;}
+.footer-credit a{color:rgba(255,255,255,.65);transition:color .2s ease;text-decoration:none;}
+.footer-credit a:hover{color:var(--aqua);}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:14px;font-weight:700;font-size:.96rem;cursor:pointer;border:none;transition:transform .2s ease,box-shadow .2s ease;}
+.btn svg{width:18px;height:18px;flex:none;}
+.btn-primary{background:var(--spring);color:var(--white);box-shadow:0 16px 30px -14px rgba(30,143,217,.55);}
+.btn-primary:hover{transform:translateY(-3px);background:var(--aqua);color:var(--ink);}
+.btn-ghost{background:transparent;color:var(--aqua);border:1.5px solid rgba(95,212,208,.4);}
+.btn-ghost:hover{border-color:var(--aqua);background:rgba(95,212,208,.1);transform:translateY(-3px);}
+@media (max-width:980px){.value-grid{grid-template-columns:repeat(2,1fr);}.product-grid{grid-template-columns:repeat(2,1fr);}.process-grid{grid-template-columns:1fr;}.trust-grid{grid-template-columns:repeat(2,1fr);}.contact-grid{grid-template-columns:1fr;}.cert-grid{grid-template-columns:1fr;}.precios-grid{grid-template-columns:1fr;}.trucha-grid{grid-template-columns:1fr;}.banner{height:380px;}}
+@media (max-width:680px){nav.links{display:none;}.burger{display:block;}.value-grid{grid-template-columns:1fr;}.product-grid{grid-template-columns:1fr;}.row-2{grid-template-columns:1fr;}.footer-grid{flex-direction:column;}.footer-cols{gap:36px;}.banner{height:320px;}}
+nav.links.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--ink-2);flex-direction:column;padding:18px 28px;gap:16px;box-shadow:var(--shadow);border-bottom:1px solid rgba(255,255,255,.08);}
 </style>
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <a class="brand" href="#inicio" aria-label="Manantial de Pueblo - inicio">
-      <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="47" fill="#FFFFFF"/>
-        <circle cx="50" cy="50" r="47" stroke="#114B8A" stroke-width="4"/>
-        <path d="M18 62 L38 30 L50 48 L60 32 L82 62 Z" fill="#5FD4D0"/>
-        <path d="M18 62 L38 30 L50 48 L60 32 L82 62 Z" fill="url(#mgrad)" opacity="0.9"/>
-        <path d="M32 50 L38 40 L44 50 Z" fill="#FFFFFF"/>
-        <path d="M54 42 L60 32 L66 42 Z" fill="#FFFFFF"/>
-        <path d="M22 64 Q50 52 78 64 L78 70 Q50 60 22 70 Z" fill="#114B8A"/>
-        <circle cx="50" cy="78" r="7" fill="#1E8FD9"/>
-        <path d="M50 71 Q56 78 50 85 Q44 78 50 71 Z" fill="#1E8FD9"/>
-        <defs>
-          <linearGradient id="mgrad" x1="18" y1="30" x2="82" y2="62" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#1E8FD9"/>
-            <stop offset="1" stop-color="#5FD4D0"/>
-          </linearGradient>
-        </defs>
-      </svg>
+    <a class="brand" href="#inicio">
+      <img class="brand-logo" src="images/logo.jpeg" alt="Logo Manantial de Pueblo">
       <span class="brand-name">MANANTIAL<br>DE PUEBLO<span>AGUA PURA, VIDA SALUDABLE</span></span>
     </a>
     <nav class="links" id="navLinks">
       <a href="#inicio">Inicio</a>
       <a href="#productos">Productos</a>
-      <a href="#nosotros">Nosotros</a>
+      <a href="#trucha">Trucha</a>
       <a href="#certificaciones">Certificaciones</a>
+      <a href="#precios">Precios</a>
       <a href="#contacto">Contacto</a>
     </nav>
     <div class="nav-actions">
-      <a class="wa-pill" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20agua" target="_blank" rel="noopener">
+      <a class="wa-pill" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>
         312 403 6243
       </a>
-      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow-pill"><span class="dot"></span> PEDIDOS A DOMICILIO · SANTANDER, COLOMBIA</div>
-      <h1>Pureza natural<br>que nace en <em>Santander</em>.</h1>
-      <p class="lead">Manantial de Pueblo trata el agua por ósmosis inversa y la envasa bajo registro sanitario INVIMA, para que tu familia tenga algo confiable que tomar todos los días.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20agua" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>
-          Pedir por WhatsApp
-        </a>
-        <a class="btn btn-ghost" href="#productos">Ver presentaciones</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="ripple-card">
-        <div class="ripple-badge"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg> Registro INVIMA RSA-3628-2026</div>
-        <img src="images/ima.jpeg" alt="Garrafón de 19 litros Manantial de Pueblo, nuestra presentación insignia">
-      </div>
-    </div>
+<div class="banner" id="inicio">
+  <div class="banner-slide active" style="background-image:url('images/banner-1.jpeg')"></div>
+  <div class="banner-slide" style="background-image:url('images/banner-2.jpeg')"></div>
+  <div class="banner-slide" style="background-image:url('images/trucha-banner.jpeg')"></div>
+  <div class="banner-slide" style="background-image:url('images/sitio-fisico.jpeg')"></div>
+  <div class="banner-dots" id="bannerDots">
+    <button class="active" data-slide="0" aria-label="Slide 1"></button>
+    <button data-slide="1" aria-label="Slide 2"></button>
+    <button data-slide="2" aria-label="Slide 3"></button>
+    <button data-slide="3" aria-label="Slide 4"></button>
   </div>
-
-  <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,40 C240,90 480,0 720,40 C960,80 1200,10 1440,50 L1440,90 L0,90 Z" fill="#FFFFFF"/>
-  </svg>
-</section>
+</div>
 
 <section class="values" id="nosotros">
   <div class="wrap">
     <div class="section-head">
       <div class="tag">Por qué elegirnos</div>
       <h2>Calidad que se siente, frescura que te acompaña</h2>
-      <p>Agua purificada de alta calidad, ideal para la salud y el bienestar de tu familia.</p>
+      <p>Agua purificada y trucha fresca, ideales para la salud y el bienestar de tu familia.</p>
     </div>
     <div class="value-grid">
-      <div class="value-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#1E8FD9" stroke-width="2"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-7-7-13z"/></svg></div>
-        <h3>100% purificada</h3>
-        <p>Tratada por ósmosis inversa bajo controles rigurosos en cada lote.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg></div>
-        <h3>Libre de impurezas</h3>
-        <p>Filtrada y desinfectada para que cada gota sea segura.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2"><path d="M12 21c0-6 6-7 6-13a6 6 0 00-12 0c0 6 6 7 6 13z"/></svg></div>
-        <h3>Frescura que te renueva</h3>
-        <p>Envasada y conservada para que llegue igual de fresca a tu mesa.</p>
-      </div>
-      <div class="value-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#114B8A" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M14 20c0-2.6 1.6-4.6 4-5.4"/></svg></div>
-        <h3>Para toda la familia</h3>
-        <p>Calidad constante que cuida a cada integrante de tu hogar.</p>
-      </div>
+      <div class="value-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#5FD4D0" stroke-width="2"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-7-7-13z"/></svg></div><h3>100% purificada</h3><p>Tratada por ósmosis inversa bajo controles rigurosos en cada lote.</p></div>
+      <div class="value-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg></div><h3>Libre de impurezas</h3><p>Filtrada y desinfectada para que cada gota sea segura.</p></div>
+      <div class="value-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#5FD4D0" stroke-width="2"><path d="M12 21c0-6 6-7 6-13a6 6 0 00-12 0c0 6 6 7 6 13z"/></svg></div><h3>Frescura que te renueva</h3><p>Envasada y conservada para que llegue igual de fresca a tu mesa.</p></div>
+      <div class="value-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#114B8A" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M14 20c0-2.6 1.6-4.6 4-5.4"/></svg></div><h3>Para toda la familia</h3><p>Calidad constante que cuida a cada integrante de tu hogar.</p></div>
     </div>
   </div>
 </section>
@@ -519,213 +213,127 @@
       <p>Desde la botella personal hasta el garrafón familiar, todo con el mismo estándar de pureza.</p>
     </div>
     <div class="product-grid">
-
-      <!-- Producto 1: ima1.jpeg -->
-      <div class="product-card">
-        <div class="product-media"><span class="product-cap mono">1 LITRO</span><img src="images/ima1.jpeg" alt="Botella de 250 ml Manantial de Pueblo"></div>
-        <div class="product-body">
-          <h3>Botella 1 litro</h3>
-          <p>Más rendimiento en cada sorbo: perfecta para el trabajo, el gimnasio o un día largo fuera de casa.</p>
-          <a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%201%20Litro" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
+      <div class="product-card"><div class="product-media"><span class="product-cap mono">600 ML NORMAL</span><img src="images/600mlblanco.jpg" alt="Botella 600 ml Manantial de Pueblo"></div><div class="product-body"><h3>Botella 600 ml Normal</h3><p>El tamaño clásico para el día a día: bolso, oficina o el carro.</p><a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%20600ml%20Normal" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
+      <div class="product-card"><div class="product-media"><span class="product-cap mono">600 ML AZUL</span><img src="images/azul600ml.jpg" alt="Botella 600 ml Azul Manantial de Pueblo"></div><div class="product-body"><h3>Botella 600 ml Azul</h3><p>Nuestra edición especial con diseño distintivo, la misma pureza en un empaque único.</p><a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%20600ml%20Azul" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
+      <div class="product-card"><div class="product-media"><span class="product-cap mono">1 LITRO</span><img src="images/1litro.jpg" alt="Botella 1 litro Manantial de Pueblo"></div><div class="product-body"><h3>Botella 1 Litro</h3><p>Más rendimiento en cada sorbo: perfecta para el trabajo, el gimnasio o un día largo fuera de casa.</p><a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%201%20Litro" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
+      <div class="product-card"><div class="product-media"><span class="product-cap mono">4 LITROS</span><img src="images/4litros.jpg" alt="Botellón 4 litros Manantial de Pueblo"></div><div class="product-body"><h3>Botellón 4 Litros</h3><p>Con asa para servir fácil, ideal para la cocina o la mesa familiar.</p><a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botell%C3%B3n%204%20Litros" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
+      <div class="product-card"><div class="product-media"><span class="product-cap mono">20 LITROS</span><img src="images/20litors.jpg" alt="Botellón 20 litros Manantial de Pueblo"></div><div class="product-body"><h3>Botellón 20 Litros</h3><p>Perfecto para uso doméstico o comercial, con diseño resistente y funcional con dispensador de fácil llenado.</p><a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botell%C3%B3n%2020%20Litros" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div></div>
       </div>
+  </div>
+</section>
 
-      <!-- Producto 2: ima2.jpeg -->
-      <div class="product-card">
-        <div class="product-media"><span class="product-cap mono">600 ML</span><img src="images/ima3.jpeg" alt="Botella de 600 ml Manantial de Pueblo"></div>
-        <div class="product-body">
-          <h3>Botella 600 ml Normal</h3>
-          <p>El tamaño clásico para el día a día: bolso, oficina o el carro.</p>
-          <a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%20600ml%20Normal" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
+<section class="trucha" id="trucha">
+  <div class="wrap">
+    <div class="trucha-grid">
+      <div class="trucha-text">
+        <div class="tag">De nuestra tierra</div>
+        <h2>Trucha fresca de Santander</h2>
+        <p>Además de nuestra agua, llevamos hasta tu mesa trucha fresca de la región. Criada con cuidado, seleccionada y disponible para tu hogar o negocio.</p>
+        <p>Consultа disponibilidad y presentaciones directamente por WhatsApp.</p>
+        <a class="btn btn-primary" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20consultar%20por%20la%20trucha" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>
+          Consultar por WhatsApp
+        </a>
       </div>
-
-      <!-- Producto 3: ima3.jpeg -->
-      <div class="product-card">
-        <div class="product-media"><span class="product-cap mono">600 ML AZUL</span><img src="images/ima6.jpeg" alt="Botella azul de 600 ml Manantial de Pueblo, edición especial"></div>
-        <div class="product-body">
-          <h3>Botella 600 ml Azul</h3>
-          <p>Nuestra edición especial con diseño distintivo, la misma pureza en un empaque único.</p>
-          <a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%20600ml%20Azul" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
+      <div class="trucha-media">
+        <img src="images/trucha-1.jpeg" alt="Trucha fresca Manantial de Pueblo">
+        <img src="images/trucha-2.jpeg" alt="Trucha entera fresca">
       </div>
-
-      <!-- Producto 4: ima4.jpeg -->
-      <div class="product-card">
-        <div class="product-media"><span class="product-cap mono">4 LITROS</span><img src="images/ima4.jpeg" alt="Botella de 4 litro Manantial de Pueblo"></div>
-        <div class="product-body">
-          <h3>Botellon 4 Litros</h3>
-          <p>Con asa para servir fácil, ideal para la cocina o la mesa familiar.</p>
-          <a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botella%201%20Litro" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
-      <!-- Producto 5: ima5.jpeg -->
-      <div class="product-card">
-        <div class="product-media"><span class="product-cap mono">20 LITROS</span><img src="images/ima5.jpeg" alt="Botellón de 4 litros con asa Manantial de Pueblo"></div>
-        <div class="product-body">
-          <h3>Botellón 20 Litros</h3>
-          <p>Perfecto para uso doméstico o comercial, con diseño resistente y funcional con dispensador de fasil llenado.</p>
-          <a class="product-order" href="https://wa.me/573124036243?text=Hola%2C%20quiero%20pedir%20Botell%C3%B3n%204%20Litros" target="_blank" rel="noopener">Pedir este producto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
 <section class="process">
   <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Cómo funciona</div>
-      <h2>De tu mensaje a tu puerta, en tres pasos</h2>
-    </div>
+    <div class="section-head"><div class="tag">Cómo funciona</div><h2>De tu mensaje a tu puerta, en tres pasos</h2></div>
     <div class="process-grid">
-      <div class="process-card">
-        <div class="process-num mono">01</div>
-        <h3>Elige tu presentación</h3>
-        <p>Revisa el catálogo y decide qué formato necesita tu casa o negocio.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-num mono">02</div>
-        <h3>Escríbenos</h3>
-        <p>Confirma tu pedido por WhatsApp o llena el formulario de contacto.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-num mono">03</div>
-        <h3>Recibe en casa</h3>
-        <p>Te lo llevamos directo a la puerta, listo para tomar.</p>
-      </div>
+      <div class="process-card"><div class="process-num mono">01</div><h3>Elige tu presentación</h3><p>Revisa el catálogo y decide qué formato necesita tu casa o negocio.</p></div>
+      <div class="process-card"><div class="process-num mono">02</div><h3>Escríbenos</h3><p>Confirma tu pedido por WhatsApp o llena el formulario de contacto.</p></div>
+      <div class="process-card"><div class="process-num mono">03</div><h3>Recibe en casa</h3><p>Te lo llevamos directo a la puerta, listo para disfrutar.</p></div>
     </div>
   </div>
 </section>
 
 <section class="trust">
   <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Compromiso</div>
-      <h2>La pureza que tu familia merece</h2>
-      <p>Respaldados por un registro sanitario vigente y un tratamiento verificado en cada garrafón.</p>
-    </div>
+    <div class="section-head"><div class="tag">Compromiso</div><h2>La pureza que tu familia merece</h2><p>Respaldados por un registro sanitario vigente y un tratamiento verificado en cada garrafón.</p></div>
     <div class="trust-grid">
-      <div class="trust-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h4>Registro sanitario INVIMA</h4>
-        <p>RSA-3628-2026, vigente hasta 2031.</p>
+      <div class="trust-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div><h4>Registro sanitario INVIMA</h4><p>RSA-3628-2026, vigente hasta 2031.</p></div>
+      <div class="trust-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-7-7-13z"/></svg></div><h4>Ósmosis inversa</h4><p>Tratamiento que garantiza pureza en cada lote.</p></div>
+      <div class="trust-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 21c0-6 6-7 6-13a6 6 0 00-12 0c0 6 6 7 6 13z"/></svg></div><h4>De la mejor fuente</h4><p>Origen cuidado desde el manantial en Santander.</p></div>
+      <div class="trust-card"><div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M14 20c0-2.6 1.6-4.6 4-5.4"/></svg></div><h4>Para toda la familia</h4><p>Seguro para grandes y pequeños.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="certifications" id="certificaciones">
+  <div class="wrap">
+    <div class="section-head"><div class="tag">Transparencia y calidad</div><h2>Permisos y certificaciones</h2><p>Nuestro compromiso con la calidad está respaldado por las autoridades sanitarias y laboratorios certificados.</p></div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#5FD4D0" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Registro Sanitario INVIMA</h3>
+        <p><strong>RSA-3628-2026</strong><br>Vigente hasta 2031. Este registro certifica que nuestro proceso de producción, envasado y control de calidad cumple con todos los requisitos exigidos por el Instituto Nacional de Vigilancia de Medicamentos y Alimentos.</p>
+        <div class="cert-preview"><img src="images/ima8.jpeg" alt="Registro sanitario INVIMA Manantial de Pueblo"><span class="mono">📄 Registro INVIMA RSA-3628-2026</span></div>
+        <span class="cert-badge">✓ Aprobado</span>
       </div>
-      <div class="trust-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-7-7-13z"/></svg></div>
-        <h4>Ósmosis inversa</h4>
-        <p>Tratamiento que garantiza pureza en cada lote.</p>
-      </div>
-      <div class="trust-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 21c0-6 6-7 6-13a6 6 0 00-12 0c0 6 6 7 6 13z"/></svg></div>
-        <h4>De la mejor fuente</h4>
-        <p>Origen cuidado desde el manantial en Santander.</p>
-      </div>
-      <div class="trust-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M14 20c0-2.6 1.6-4.6 4-5.4"/></svg></div>
-        <h4>Para toda la familia</h4>
-        <p>Seguro para grandes y pequeños.</p>
+      <div class="cert-card">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><path d="M8 7h8"/><path d="M8 11h6"/><path d="M8 15h4"/></svg></div>
+        <h3>Análisis de Laboratorio</h3>
+        <p>Nuestro agua es sometida a pruebas microbiológicas y fisicoquímicas en laboratorios acreditados, garantizando que cumple con los estándares de potabilidad exigidos por la normativa colombiana.</p>
+        <div class="cert-preview"><img src="images/labResult.pdf" alt="Resultados de laboratorio" style="max-height:160px;width:auto;margin:0 auto;"><span class="mono">📄 Ver resultados de laboratorio</span></div>
+        <a class="cert-pdf-link" href="images/labResult.pdf" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3-3 3 3"/></svg>Descargar PDF del laboratorio</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Sección de Certificaciones y Permisos -->
-<section class="certifications" id="certificaciones">
+<section class="precios" id="precios">
   <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Transparencia y calidad</div>
-      <h2>Permisos y certificaciones</h2>
-      <p>Nuestro compromiso con la calidad está respaldado por las autoridades sanitarias y laboratorios certificados.</p>
-    </div>
-    <div class="cert-grid">
-      <!-- Tarjeta 1: Registro INVIMA con ima8.jpeg -->
-      <div class="cert-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#114B8A" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h3>Registro Sanitario INVIMA</h3>
-        <p><strong>RSA-3628-2026</strong><br>Vigente hasta 2031. Este registro certifica que nuestro proceso de producción, envasado y control de calidad cumple con todos los requisitos exigidos por el Instituto Nacional de Vigilancia de Medicamentos y Alimentos.</p>
-        <div class="cert-preview">
-          <img src="images/ima8.jpeg" alt="Registro sanitario INVIMA Manantial de Pueblo">
-          <span class="mono">📄 Registro INVIMA RSA-3628-2026</span>
-        </div>
-        <span class="cert-badge">✓ Aprobado</span>
-      </div>
-
-      <!-- Tarjeta 2: Resultados de Laboratorio -->
-      <div class="cert-card">
-        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/><path d="M8 7h8"/><path d="M8 11h6"/><path d="M8 15h4"/></svg></div>
-        <h3>Análisis de Laboratorio</h3>
-        <p>Nuestro agua es sometida a pruebas microbiológicas y fisicoquímicas en laboratorios acreditados, garantizando que cumple con los estándares de potabilidad exigidos por la normativa colombiana.</p>
-        <div class="cert-preview">
-          <img src="images/labResult.pdf" alt="Resultados de laboratorio - Manantial de Pueblo" style="max-height:160px;width:auto;margin:0 auto;">
-          <span class="mono">📄 Ver resultados de laboratorio</span>
-        </div>
-        <a class="cert-pdf-link" href="images/labResult.pdf" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3-3 3 3"/></svg>
-          Descargar PDF del laboratorio
-        </a>
-      </div>
+    <div class="section-head"><div class="tag">Lista de precios</div><h2>Precios claros, sin sorpresas</h2><p>Consulta nuestros precios actualizados para tienda y venta al detalle.</p></div>
+    <div class="precios-grid">
+      <div class="precios-card"><img src="images/precios-tienda.jpeg" alt="Catálogo de precios tienda Manantial de Pueblo"><div class="cap">Catálogo de precios · Venta tienda</div></div>
+      <div class="precios-card"><img src="images/precios-detalle.jpeg" alt="Catálogo de precios al detalle Manantial de Pueblo"><div class="cap">Catálogo de precios · Venta al detalle</div></div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contacto">
   <div class="wrap">
-    <div class="section-head">
-      <div class="tag">Contacto</div>
-      <h2>Haz tu pedido hoy mismo</h2>
-      <p>Escríbenos directo o llena el formulario: lo recibimos en WhatsApp para confirmar tu entrega.</p>
-    </div>
+    <div class="section-head"><div class="tag">Contacto</div><h2>Haz tu pedido hoy mismo</h2><p>Escríbenos directo o llena el formulario: lo recibimos en WhatsApp para confirmar tu entrega.</p></div>
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Pedidos a domicilio</h3>
         <p>Atendemos pedidos para casas y negocios en Santander. Cuéntanos qué necesitas y coordinamos la entrega.</p>
-        <div class="contact-number">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>
-          312 403 6243
-        </div>
+        <div class="contact-number"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>312 403 6243</div>
         <ul class="contact-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg> Respuesta directa por WhatsApp</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 13h2l2-5h10l2 5h2v5H3z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg> Entrega a domicilio</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0014 0c0-3.5-3-7-7-13z"/></svg> Agua tratada bajo registro INVIMA</li>
         </ul>
       </div>
-
       <div class="form-card">
         <h3>Cuéntanos qué necesitas</h3>
         <p>Completa el formulario y lo enviamos directo a nuestro WhatsApp para confirmar tu pedido.</p>
         <form id="orderForm">
           <div class="row-2">
-            <div class="field">
-              <label for="name">Nombre</label>
-              <input type="text" id="name" required placeholder="Tu nombre">
-            </div>
-            <div class="field">
-              <label for="phone">Teléfono</label>
-              <input type="tel" id="phone" required placeholder="300 000 0000">
-            </div>
+            <div class="field"><label for="name">Nombre</label><input type="text" id="name" required placeholder="Tu nombre"></div>
+            <div class="field"><label for="phone">Teléfono</label><input type="tel" id="phone" required placeholder="300 000 0000"></div>
           </div>
-          <div class="field">
-            <label for="product">Producto de interés</label>
+          <div class="field"><label for="product">Producto de interés</label>
             <select id="product">
-              <option>Botella 250 ml</option>
+              <option>Botella 300 ml</option>
               <option>Botella 600 ml Normal</option>
               <option>Botella 600 ml Azul</option>
               <option>Botella 1 Litro</option>
               <option>Botellón 4 Litros</option>
+              <option>Botellón 20 Litros</option>
+              <option>Trucha fresca</option>
               <option>Otro / no estoy seguro</option>
             </select>
           </div>
-          <div class="field">
-            <label for="message">Dirección o mensaje</label>
-            <textarea id="message" rows="3" placeholder="Cuéntanos tu dirección o cualquier detalle de tu pedido"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>
-            Enviar pedido por WhatsApp
-          </button>
+          <div class="field"><label for="message">Dirección o mensaje</label><textarea id="message" rows="3" placeholder="Cuéntanos tu dirección o cualquier detalle de tu pedido"></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.32 4.94L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.1c-.25.7-1.45 1.34-2 1.43-.5.08-1.13.11-1.83-.12-.42-.13-.96-.31-1.66-.6-2.93-1.27-4.84-4.22-4.99-4.42-.15-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.2 0 .39.002.56.01.18.01.42-.07.66.5.25.6.84 2.07.92 2.22.08.15.13.33.03.53-.1.2-.16.32-.31.49-.15.17-.32.38-.46.51-.15.14-.3.29-.13.57.18.29.8 1.32 1.72 2.13 1.18 1.05 2.18 1.38 2.49 1.53.31.15.49.13.67-.06.18-.2.78-.9 1-1.21.21-.31.43-.26.71-.16.29.1 1.85.87 2.17 1.03.31.16.52.24.6.37.08.13.08.74-.17 1.44z"/></svg>Enviar pedido por WhatsApp</button>
           <p class="form-note">Al enviar, se abrirá WhatsApp con tu pedido ya redactado para que solo confirmes el envío.</p>
           <p class="form-status" id="formStatus">¡Listo! Te llevamos a WhatsApp para confirmar tu pedido.</p>
         </form>
@@ -738,14 +346,8 @@
   <div class="wrap footer-grid">
     <div>
       <div class="footer-brand">
-        <svg width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="47" fill="#0B2545"/>
-          <circle cx="50" cy="50" r="47" stroke="#5FD4D0" stroke-width="3"/>
-          <path d="M18 62 L38 30 L50 48 L60 32 L82 62 Z" fill="#1E8FD9"/>
-          <path d="M22 64 Q50 52 78 64 L78 70 Q50 60 22 70 Z" fill="#5FD4D0"/>
-          <circle cx="50" cy="78" r="6" fill="#5FD4D0"/>
-        </svg>
-        <span class="brand-name mono" style="font-family:'Sora',sans-serif;">MANANTIAL<br>DE PUEBLO</span>
+        <img class="brand-logo" src="images/logo.jpeg" alt="Logo Manantial de Pueblo">
+        <span class="brand-name">MANANTIAL<br>DE PUEBLO</span>
       </div>
       <p class="footer-tagline">La pureza que tu familia merece.</p>
       <p class="footer-legal">Producido y envasado por Sergio Avila Bonilla · NIT 1.098.101.607<br>Carrera 5 #8-07, Guaca, Santander · Registro sanitario RSA-3628-2026</p>
@@ -755,8 +357,9 @@
         <h4>Navegación</h4>
         <a href="#inicio">Inicio</a>
         <a href="#productos">Productos</a>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#trucha">Trucha</a>
         <a href="#certificaciones">Certificaciones</a>
+        <a href="#precios">Precios</a>
         <a href="#contacto">Contacto</a>
       </div>
       <div class="footer-col">
@@ -773,29 +376,30 @@
 </footer>
 
 <script>
-  const burger = document.getElementById('burgerBtn');
-  const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    burger.setAttribute('aria-expanded', isOpen);
-  });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-  const form = document.getElementById('orderForm');
-  const status = document.getElementById('formStatus');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const product = document.getElementById('product').value;
-    const message = document.getElementById('message').value.trim();
-    let text = `Hola, soy ${name} (tel: ${phone}). Quiero pedir: ${product}.`;
-    if(message){ text += ` Detalle/dirección: ${message}`; }
-    const url = `https://wa.me/573124036243?text=${encodeURIComponent(text)}`;
-    status.style.display = 'block';
-    window.open(url, '_blank');
-  });
+const burger=document.getElementById('burgerBtn');
+const navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>{const isOpen=navLinks.classList.toggle('open');burger.setAttribute('aria-expanded',isOpen);});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const slides=document.querySelectorAll('.banner-slide');
+const dots=document.querySelectorAll('#bannerDots button');
+let current=0;
+function showSlide(i){slides.forEach(s=>s.classList.remove('active'));dots.forEach(d=>d.classList.remove('active'));slides[i].classList.add('active');dots[i].classList.add('active');current=i;}
+dots.forEach(d=>d.addEventListener('click',()=>showSlide(parseInt(d.dataset.slide))));
+setInterval(()=>showSlide((current+1)%slides.length),5000);
+const form=document.getElementById('orderForm');
+const status=document.getElementById('formStatus');
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const product=document.getElementById('product').value;
+  const message=document.getElementById('message').value.trim();
+  let text=`Hola, soy ${name} (tel: ${phone}). Quiero pedir: ${product}.`;
+  if(message){text+=` Detalle/dirección: ${message}`;}
+  const url=`https://wa.me/573124036243?text=${encodeURIComponent(text)}`;
+  status.style.display='block';
+  window.open(url,'_blank');
+});
 </script>
-
 </body>
 </html>

@@ -1,0 +1,57 @@
+# Archivos temporales
+*.bak
+*.old
+*.tmp
+*.zip
+
+# Carpetas de trabajo (no se suben)
+nuevaPresentacion/
+images/nuevaImagen/
+images/videos/
+
+# PDFs y docs no relacionados
+CuentaNu_FBJ113_2026-09.pdf
+resumen_proyecto_manantial.md
+
+# Imágenes de productos no usadas
+images/1.jpeg
+images/2.jpeg
+images/3.jpeg
+images/25_comprimida.jpg
+images/familia-completa.jpg
+images/hero-familia.jpg
+images/ima7_1024x576.jpg
+images/marca-detalle.jpg
+images/producto-1l-chupo.jpg
+images/producto-1l-transparente-2.jpg
+images/producto-1l-transparente.jpg
+images/producto-1l.jpg
+images/producto-20l-2.jpg
+images/producto-20l-3.jpg
+images/producto-20l-etiqueta-2.jpg
+images/producto-20l-etiqueta.jpg
+images/producto-20l-solo.jpg
+images/producto-20l.jpg
+images/producto-300ml-2.jpg
+images/producto-300ml-3.jpg
+images/producto-300ml-etiqueta.jpg
+images/producto-300ml-solo.jpg
+images/producto-300ml.jpg
+images/producto-4l.jpg
+images/producto-600-azul-2.jpg
+images/producto-600-azul-3.jpg
+images/producto-600-azul-solo-2.jpg
+images/producto-600-azul-solo.jpg
+images/producto-600-azul.jpg
+images/producto-600-blanco-2.jpg
+images/producto-600-blanco-3.jpg
+images/producto-600-blanco-4.jpg
+images/producto-600-blanco-5.jpg
+images/producto-600-blanco.jpg
+images/producto-600-normal.jpg
+images/producto-mix.jpg
+images/1.jpeg
+images/2.jpeg
+images/3.jpeg
+preciosProductos.jpeg
+manantial-de-pueblo-listo.zip
